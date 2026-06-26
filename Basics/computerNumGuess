@@ -1,0 +1,20 @@
+import random
+import math
+print("Computer Will Guess Your Number ......")
+large = int(input("Enter the Largest Range : "))
+small = int(input("Enter the Smallest Range : "))
+number = int(input("Enter Your Secret Number : "))
+count  = 0
+print("Minimum Number of Guess (TARGET) : ",math.ceil(math.log2(large - small + 1)))
+while True:
+    count+=1
+    num =(large+small)//2
+    if(num>number):
+        large = num+1
+        
+    elif(num<number):
+        small = num -1
+        
+    elif(num == number):
+        print("Congrats ! My Computer You Won in ", count," Tries")
+        break
