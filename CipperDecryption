@@ -1,0 +1,19 @@
+#Data Decryption Technique - Cipper Method
+PlainText = input("Enter a word , Lowercase message : ")
+distance = int(input("Enter The Distance Value : "))
+code = ""
+for ch in PlainText:
+    val = ord(ch)
+    cipervalue = val + distance
+    if cipervalue > ord('z'):
+        cipervalue = (ord(ch) - ord('a') +distance)%26 + ord('a')
+    code = code+chr(cipervalue)
+print("Secret Code: "+code)
+act=""
+for ch in code:
+    ordval = ord(ch)
+    ordval = ordval - distance
+    if ordval < ord('a'):
+        ordval =(ord(ch) - ord('a') - distance) % 26 + ord('a')
+    act+=chr(ordval)
+print("Actual Message : "+act)
